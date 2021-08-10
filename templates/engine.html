@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        .shakeImg {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 1.3s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+    </style>
+
+    {% include "includes/header.html" %}
+
+<p class= "d-flex justify-content-center my-4">
+                <a href="/" class="btn btn-info mx-2"><i class="fas fa-home"></i> Home</a>
+                <a href="/run-prediction" class="btn btn-primary mx-2"><i class="fas fa-cogs"></i> Run More Prediction</a>
+            </p>
+        </div>
+        </div>
+        <div style="margin-bottom: 7%; background: #D3D9D4;">
+            <!-- {{request.query_params}} -->
+            {% if result == 1 %}
+            <div class="row">
+                <center>
+                    <h1><i class="fas fa-exclamation-triangle text-danger"></i>  Unfortunatel Flood Will Occur!</h1>
+                    <h5><i>According to our Machine Learning Prediction Model</i></h5>
+                    <img src="{{ url_for('static', path='imgs/flood.png') }}" style="width:20%" class="img-fluid shakeImg"/>
+                </center>
+            </div>
+	          
+    
+        {% elif result == 0 %}
+        <div class="row">
+            <center>
+                <h1><i class="fas fa-check text-success"></i>  Good news Flood Will Not Occur!</h1>
+                <h5><i>According to our Machine Learning Prediction Model</i></h5>
+                <img src="{{ url_for('static', path='imgs/tick.png') }}" style="width:20%" class="img-fluid shakeImg" />
+            </center>
+        </div>
+            
+            
+        {% endif %}
+        </div>
+    </div>
+
+
+
+    {% include "includes/footer.html" %}
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    {% include "includes/header.html" %}
+
+ <p class= "d-flex justify-content-center my-4">
+                <a href="/" class="btn btn-info"><i class="fas fa-home"></i> Go Back To Home</a>
+    
+            </p>
+            <div class="container" style="background: #D3D9D4;margin-bottom:10%;">
+                <h2 class="d-flex justify-content-center">Enter Rainfall details:</h2>
+                <center>
+                <form class="form p-4" action='/engine'>
+                    <div class="row">
+                        
+                        <div class="form-group col-2">
+                            <input type="text" class="form-control" name="year" placeholder="year" autocomplete="on" />
+                        </div>
+                        <div class="form-group col-2">
+                            <input type="text" class="form-control" name="jan" placeholder="january" autocomplete="off" />
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" name="feb" placeholder="feb" autocomplete="off" />
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" name="mar" placeholder="mar" autocomplete="off"/>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" name="april" placeholder="april" autocomplete="off"/>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" name="may" placeholder="may" autocomplete="off"/>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" name="june" placeholder="june" autocomplete="off"/>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" name="jul" placeholder="jul" autocomplete="off"/>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" name="aug" placeholder="aug" autocomplete="off"/>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" name="sept" placeholder="sept" autocomplete="off"/>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" name="oct" placeholder="oct" autocomplete="off"/>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" name="nov" placeholder="nov" autocomplete="off"/>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" name="dec" placeholder="dec" autocomplete="off"/>
+                        </div>
+                    
+                    </div> 
+                    <button class="btn btn-success"><i class="fas fa-cogs"></i> Predict!</button>
+
+                </form></center>
+
+                <!-- <h2>{{request.query_params["jul"]}}</h2> -->
+            </div>
+        </div>
+        </div>
+    </div>
+    
+
+
+
+    {% include "includes/footer.html" %}
+
+</body>
+</html>
