@@ -31,13 +31,14 @@
 
     {% include "includes/header.html" %}
 
-<p class= "d-flex justify-content-center my-4">
+<p class= "d-flex justify-content-center my-4 p-4">
                 <a href="/" class="btn btn-info mx-2"><i class="fas fa-home"></i> Home</a>
                 <a href="/run-prediction" class="btn btn-primary mx-2"><i class="fas fa-cogs"></i> Run More Prediction</a>
             </p>
         </div>
         </div>
-        <div style="margin-bottom: 7%; background: #D3D9D4;">
+        <div style="margin-bottom: 4%; background: #D3D9D4;" class="p-4">
+            <center><h1 class="bg-danger p-1 mb-4">Prediction: {{prediction}}</h1></center>
             <!-- {{request.query_params}} -->
             {% if result == 1 %}
             <div class="row">
